@@ -1,16 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { ServicesBento } from "@/components/ServicesBento";
+import { Pricing } from "@/components/Pricing";
+import { FAQ } from "@/components/FAQ";
+import { Footer } from "@/components/Footer";
+import { StickyPlayer } from "@/components/StickyPlayer";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <ServicesBento />
+        <Pricing />
+        <FAQ />
+      </main>
+      <Footer />
+      <StickyPlayer />
+      <WhatsAppFab />
+
+      {/* SEO: structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Tu Radio en Internet",
+            url: "https://turadioeninternet.com.ar/",
+            description:
+              "Servicio profesional de streaming de radio, hosting y apps móviles para radios online.",
+            sameAs: ["https://www.instagram.com/turadioeninternet/"],
+          }),
+        }}
+      />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
