@@ -17,8 +17,8 @@ const services = [
   },
   {
     icon: Music2,
-    title: "AutoDJ Incluido",
-    desc: "Programá tu música 24/7 con rotaciones automáticas y placas publicitarias.",
+    title: "Calidad MP3 / AAC+",
+    desc: "Audio cristalino en 128 kbps con servidores Icecast v2 y SHOUTcast v2.",
     className: "md:col-span-1",
   },
   {
