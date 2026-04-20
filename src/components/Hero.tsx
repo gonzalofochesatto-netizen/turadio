@@ -24,14 +24,13 @@ export const Hero = () => {
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            Streaming de Radio,{" "}
-            <span className="text-gradient">Hosting</span> y{" "}
-            <span className="text-gradient">Apps para Radio</span> de nivel profesional
+            <span className="text-gradient">Streaming de Radio</span> y{" "}
+            <span className="text-gradient">Desarrollo Web</span> de nivel profesional
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             Llevá tu emisora al siguiente nivel con servidores Icecast y SHOUTcast en alta
-            definición, apps móviles a tu medida y soporte humano 24/7. Estabilidad, tecnología e
+            definición, sitios web a medida y soporte humano 24/7. Estabilidad, tecnología e
             innovación en una sola plataforma.
           </p>
 

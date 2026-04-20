@@ -5,17 +5,15 @@ const cols = [
     title: "Servicios",
     links: [
       { label: "Streaming de audio", href: "#servicios" },
-      { label: "Apps Android & iOS", href: "#servicios" },
       { label: "Desarrollo web", href: "#servicios" },
-      { label: "Hosting", href: "#servicios" },
       { label: "AutoDJ", href: "#servicios" },
+      { label: "Estadísticas en vivo", href: "#servicios" },
     ],
   },
   {
     title: "Empresa",
     links: [
       { label: "Planes", href: "#planes" },
-      { label: "Preguntas frecuentes", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
   },
