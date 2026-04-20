@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Radio, Smartphone, Globe, Server, Headphones, BarChart3 } from "lucide-react";
+import { Radio, Globe, Music2, Headphones, BarChart3 } from "lucide-react";
 
 const services = [
   {
@@ -10,21 +10,15 @@ const services = [
     accent: true,
   },
   {
-    icon: Smartphone,
-    title: "Apps Android & iOS",
-    desc: "Diseñamos apps personalizadas para que tu audiencia te escuche en cualquier lugar.",
-    className: "md:col-span-1",
-  },
-  {
     icon: Globe,
     title: "Desarrollo Web",
     desc: "Sitios modernos y responsive con player integrado y panel de control.",
     className: "md:col-span-1",
   },
   {
-    icon: Server,
-    title: "Hosting Confiable",
-    desc: "Infraestructura redundante con 99.9% de uptime garantizado.",
+    icon: Music2,
+    title: "AutoDJ Incluido",
+    desc: "Programá tu música 24/7 con rotaciones automáticas y placas publicitarias.",
     className: "md:col-span-1",
   },
   {
