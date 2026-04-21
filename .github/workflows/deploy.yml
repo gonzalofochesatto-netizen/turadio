@@ -3,13 +3,13 @@ name: Deploy a Hostinger
 on:
   push:
     branches:
-      - main  # Si tu rama se llama 'master', cambia esto a master
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 1. Descargar código de GitHub
+      - name: 1. Descargar codigo de GitHub
         uses: actions/checkout@v3
 
       - name: 2. Configurar Node.js
@@ -17,20 +17,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: 3. Instalar y Compilar (Build)
+      - name: 3. Instalar dependencias y Compilar (Build)
         run: |
           npm install
           npm run build
 
-      - name: 4. Subir archivos a Hostinger
+      - name: 4. Subir archivos a Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # 'dist' es la carpeta que crea Lovable/Vite
-          local-dir: ./dist/ 
-          # Ponemos './' porque tu cuenta FTP ya entra directo a public_html
-          server-dir: ./ 
+          local-dir: ./dist/
+          server-dir: ./public_html/
           port: 21
           protocol: ftp
