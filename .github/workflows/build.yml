@@ -11,10 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: oven-sh/setup-bun@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-      - run: bun install
-      - run: bun run build
+      - run: npm install
+      - run: npm run build
 
       - name: Commit dist
         run: |
