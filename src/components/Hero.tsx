@@ -49,7 +49,7 @@ export const Hero = () => {
 
           <div className="flex items-center gap-8 pt-4 text-sm text-muted-foreground">
             <div>
-              <div className="font-display text-2xl font-bold text-foreground">+500</div>
+              <div className="font-display text-2xl font-bold text-foreground">+50</div>
               radios activas
             </div>
             <div className="h-10 w-px bg-border" />
