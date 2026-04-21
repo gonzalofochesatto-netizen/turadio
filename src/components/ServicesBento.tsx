@@ -4,33 +4,33 @@ import { Radio, Globe, Music2, Headphones, BarChart3 } from "lucide-react";
 const services = [
   {
     icon: Radio,
-    title: "Streaming de Audio HD",
-    desc: "Servidores Icecast v2 y SHOUTcast v2 con MP3 128kbps o AAC+ y transferencia ilimitada.",
+    title: "Streaming de Audio HD para Radios",
+    desc: "Servidores de streaming Icecast v2 y SHOUTcast v2 con MP3 128 kbps o AAC+ y transferencia ilimitada para tu radio online en Argentina.",
     className: "md:col-span-2 md:row-span-2",
     accent: true,
   },
   {
     icon: Globe,
-    title: "Desarrollo Web",
-    desc: "Sitios modernos y responsive con player integrado y panel de control.",
+    title: "Diseño Web Profesional para Radios",
+    desc: "Páginas web a medida y responsive con reproductor integrado, ideal para emisoras que buscan presencia digital profesional.",
     className: "md:col-span-1",
   },
   {
     icon: Music2,
     title: "Calidad MP3 / AAC+",
-    desc: "Audio cristalino en 128 kbps con servidores Icecast v2 y SHOUTcast v2.",
+    desc: "Audio cristalino en 128 kbps con servidores Icecast v2 y SHOUTcast v2 para una transmisión de radio online estable.",
     className: "md:col-span-1",
   },
   {
     icon: Headphones,
-    title: "Soporte 24/7",
-    desc: "Equipo humano disponible siempre que tu radio te necesite.",
+    title: "Soporte para Radios Online 24/7",
+    desc: "Equipo humano en Argentina disponible siempre que tu radio por internet te necesite.",
     className: "md:col-span-1",
   },
   {
     icon: BarChart3,
-    title: "Estadísticas en vivo",
-    desc: "Conocé a tu audiencia en tiempo real con métricas detalladas.",
+    title: "Estadísticas en Vivo",
+    desc: "Conocé a tu audiencia en tiempo real con métricas detalladas de oyentes conectados a tu streaming.",
     className: "md:col-span-2",
   },
 ];
@@ -41,14 +41,15 @@ export const ServicesBento = () => {
       <div className="container">
         <div className="max-w-2xl mb-14">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Nuestros servicios
+            Servicios para radios online
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-3 leading-tight">
-            Todo lo que tu radio necesita,{" "}
+            Streaming de radio y diseño web,{" "}
             <span className="text-gradient">en un solo lugar</span>
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            Una suite completa pensada para emisoras que quieren sonar y verse profesional.
+            Todo lo que necesitás para crear una radio por internet profesional: servidores
+            de streaming, página web a medida y soporte humano en Argentina.
           </p>
         </div>
 
