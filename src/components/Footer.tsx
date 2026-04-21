@@ -6,7 +6,6 @@ const cols = [
     links: [
       { label: "Streaming de audio", href: "#servicios" },
       { label: "Desarrollo web", href: "#servicios" },
-      { label: "AutoDJ", href: "#servicios" },
       { label: "Estadísticas en vivo", href: "#servicios" },
     ],
   },
