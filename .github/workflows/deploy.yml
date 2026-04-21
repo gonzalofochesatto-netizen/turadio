@@ -3,7 +3,7 @@ name: Deploy a Hostinger
 on:
   push:
     branches:
-      - main  # O la rama que uses en Lovable
+      - main  # Asegurate de que tu rama en GitHub se llame main, si es master cambialo acá
 
 jobs:
   build-and-deploy:
@@ -30,3 +30,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/
+          dangerously-disable-tls: true
