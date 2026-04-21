@@ -30,7 +30,7 @@ export const Navbar = () => {
           <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
             <Radio className="h-5 w-5 text-primary-foreground" />
           </span>
-          <span>Tu Radio<span className="text-primary">.</span></span>
+          <span>Tu Radio en Internet<span className="text-primary">.</span></span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
