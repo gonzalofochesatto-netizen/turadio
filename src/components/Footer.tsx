@@ -12,14 +12,16 @@ const cols = [
   {
     title: "Empresa",
     links: [
-      { label: "Planes", href: "#planes" },
+      { label: "Planes y precios", href: "#planes" },
+      { label: "Preguntas frecuentes", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
   },
   {
     title: "Recursos",
     links: [
-      { label: "Centro de ayuda", href: "#" },
+      { label: "Cómo crear una radio online", href: "#faq" },
+      { label: "Centro de ayuda", href: "#contacto" },
     ],
   },
 ];
