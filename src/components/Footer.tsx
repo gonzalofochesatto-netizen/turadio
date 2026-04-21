@@ -20,7 +20,6 @@ const cols = [
     title: "Recursos",
     links: [
       { label: "Centro de ayuda", href: "#" },
-      { label: "Estado del servicio", href: "#" },
     ],
   },
 ];
