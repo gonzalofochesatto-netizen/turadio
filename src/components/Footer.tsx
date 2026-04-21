@@ -1,4 +1,4 @@
-import { Radio, Instagram, Mail, MapPin } from "lucide-react";
+import { Radio, Mail, MapPin } from "lucide-react";
 
 const cols = [
   {
@@ -46,17 +46,6 @@ export const Footer = () => {
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-primary" /> Argentina
             </div>
-          </div>
-          <div className="flex gap-3 pt-2">
-            <a
-              href="https://www.instagram.com/turadioeninternet/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-border hover:border-primary hover:text-primary transition-colors"
-            >
-              <Instagram className="h-4 w-4" />
-            </a>
           </div>
         </div>
 
