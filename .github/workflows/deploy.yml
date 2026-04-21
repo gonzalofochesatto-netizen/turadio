@@ -6,30 +6,29 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 1. Descargar codigo de GitHub
+      - name: Descargar código
         uses: actions/checkout@v3
 
-      - name: 2. Configurar Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 3. Instalar dependencias y Compilar (Build)
+      - name: Instalar y Compilar
         run: |
           npm install
           npm run build
 
-      - name: 4. Subir archivos a Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Subir por SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          # Cambiamos a ./ porque tu usuario ya entra directo a public_html
-          server-dir: ./
-          port: 21
-          protocol: ftp
+          port: 65002 # Puerto SFTP de Hostinger
+          local_path: './dist/*'
+          remote_path: '/domains/turadioeninternet.com.ar/public_html/'
+          sftp_only: true
