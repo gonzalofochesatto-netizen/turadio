@@ -18,12 +18,12 @@ jobs:
       - name: Build Vite
         run: npm run build
 
-      - name: Deploy via SFTP (Hostinger)
+      - name: Deploy via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
+          port: 65002
           source: "dist/*"
-          target: "public_html/turadio/"
+          target: "/home/${{ secrets.FTP_USERNAME }}/public_html/turadio/"
