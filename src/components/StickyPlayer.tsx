@@ -21,6 +21,15 @@ export const StickyPlayer = () => {
     }
   };
 
+  useEffect(() => {
+    const handlePlay = () => {
+      if (!audioRef.current) return;
+      audioRef.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    };
+    window.addEventListener("play-demo", handlePlay);
+    return () => window.removeEventListener("play-demo", handlePlay);
+  }, []);
+
   return (
     <div
       id="demo"
