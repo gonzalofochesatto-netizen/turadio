@@ -4,22 +4,24 @@ const cols = [
   {
     title: "Servicios",
     links: [
-      { label: "Streaming de audio", href: "#servicios" },
-      { label: "Desarrollo web", href: "#servicios" },
+      { label: "Streaming de radio online", href: "#servicios" },
+      { label: "Diseño web para radios", href: "#servicios" },
       { label: "Estadísticas en vivo", href: "#servicios" },
     ],
   },
   {
     title: "Empresa",
     links: [
-      { label: "Planes", href: "#planes" },
+      { label: "Planes y precios", href: "#planes" },
+      { label: "Preguntas frecuentes", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
   },
   {
     title: "Recursos",
     links: [
-      { label: "Centro de ayuda", href: "#" },
+      { label: "Cómo crear una radio online", href: "#faq" },
+      { label: "Centro de ayuda", href: "#contacto" },
     ],
   },
 ];
