@@ -4,8 +4,8 @@ const cols = [
   {
     title: "Servicios",
     links: [
-      { label: "Streaming de audio", href: "#servicios" },
-      { label: "Desarrollo web", href: "#servicios" },
+      { label: "Streaming de radio online", href: "#servicios" },
+      { label: "Diseño web para radios", href: "#servicios" },
       { label: "Estadísticas en vivo", href: "#servicios" },
     ],
   },
