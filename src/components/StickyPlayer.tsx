@@ -83,7 +83,7 @@ export const StickyPlayer = () => {
           />
         </div>
 
-        <audio ref={audioRef} src="https://stream.zeno.fm/0r0xa792kwzuv" preload="none" />
+        <audio ref={audioRef} src="https://streaming01.radiosenlinea.com.ar:10199/stream" preload="none" />
       </div>
     </div>
   );

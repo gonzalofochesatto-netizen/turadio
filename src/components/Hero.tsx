@@ -40,10 +40,15 @@ export const Hero = () => {
                 Empezar ahora <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button variant="glow" size="xl" asChild>
-              <a href="#demo">
-                <PlayCircle className="h-5 w-5" /> Escuchar demo
-              </a>
+            <Button
+              variant="glow"
+              size="xl"
+              onClick={() => {
+                window.dispatchEvent(new Event("play-demo"));
+                document.getElementById("demo")?.scrollIntoView({ behavior: "smooth", block: "center" });
+              }}
+            >
+              <PlayCircle className="h-5 w-5" /> Escuchar demo
             </Button>
           </div>
 
