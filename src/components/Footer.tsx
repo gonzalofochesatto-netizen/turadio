@@ -1,4 +1,4 @@
-import { Radio, Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import { Radio, Instagram, Mail, MapPin } from "lucide-react";
 
 const cols = [
   {
@@ -56,13 +56,6 @@ export const Footer = () => {
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-border hover:border-primary hover:text-primary transition-colors"
             >
               <Instagram className="h-4 w-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-border hover:border-primary hover:text-primary transition-colors"
-            >
-              <Facebook className="h-4 w-4" />
             </a>
           </div>
         </div>
