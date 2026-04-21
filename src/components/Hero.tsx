@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroMockup from "@/assets/hero-mockup.png";
+import heroMockup from "@/assets/hero-woman-listening.jpg";
 
 export const Hero = () => {
   return (
@@ -74,10 +74,10 @@ export const Hero = () => {
           <div className="absolute inset-0 bg-gradient-glow blur-3xl" />
           <img
             src={heroMockup}
-            alt="Aplicación móvil de streaming de radio en modo oscuro con visualizador de audio"
-            width={560}
-            height={560}
-            className="relative w-full max-w-md animate-float drop-shadow-2xl"
+            alt="Mujer disfrutando música con auriculares premium y visualizador de ondas de audio"
+            width={1024}
+            height={1024}
+            className="relative w-full max-w-md rounded-3xl animate-float drop-shadow-2xl"
           />
         </motion.div>
       </div>
