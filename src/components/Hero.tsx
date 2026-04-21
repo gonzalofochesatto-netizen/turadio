@@ -20,18 +20,18 @@ export const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
             <Sparkles className="h-3.5 w-3.5" />
-            Tecnología broadcasting de última generación
+            Streaming de radio profesional en Argentina
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-            <span className="text-gradient">Streaming de Radio</span> y{" "}
-            <span className="text-gradient">Desarrollo Web</span> de nivel profesional
+            <span className="text-gradient">Crear tu Radio Online</span> con Streaming de Audio y{" "}
+            <span className="text-gradient">Diseño Web Profesional</span>
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Llevá tu emisora al siguiente nivel con servidores Icecast y SHOUTcast en alta
-            definición, sitios web a medida y soporte humano 24/7. Estabilidad, tecnología e
-            innovación en una sola plataforma.
+            Transmití tu radio por internet con servidores Icecast y SHOUTcast en HD,
+            páginas web a medida para emisoras y soporte humano 24/7. La forma más simple
+            y profesional de hacer una radio online en Argentina.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
@@ -79,7 +79,7 @@ export const Hero = () => {
           <div className="absolute inset-0 bg-gradient-glow blur-3xl" />
           <img
             src={heroMockup}
-            alt="Mujer disfrutando música con auriculares premium y visualizador de ondas de audio"
+            alt="Mujer escuchando una radio online en HD con auriculares profesionales y visualizador de streaming de audio"
             width={1024}
             height={1024}
             className="relative w-full max-w-md rounded-3xl animate-float drop-shadow-2xl"
