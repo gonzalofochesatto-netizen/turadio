@@ -46,7 +46,7 @@ export const Footer = () => {
               <Mail className="h-4 w-4 text-primary" /> contacto@turadioeninternet.com.ar
             </div>
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" /> Argentina
+              <MapPin className="h-4 w-4 text-primary" /> Concordia - Entre Rios - Argentina
             </div>
           </div>
         </div>
