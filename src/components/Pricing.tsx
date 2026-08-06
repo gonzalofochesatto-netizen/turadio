@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const plans = [
+export const plans = [
   {
     name: "Plan Inicial",
     price: "5.000",

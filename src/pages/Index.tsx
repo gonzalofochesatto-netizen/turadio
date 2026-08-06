@@ -1,59 +1,141 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ServicesBento } from "@/components/ServicesBento";
-import { Pricing } from "@/components/Pricing";
+import { Pricing, plans } from "@/components/Pricing";
 import { FAQ, faqs } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { StickyPlayer } from "@/components/StickyPlayer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import logoAsset from "@/assets/logo.png.asset.json";
+
+const SITE = "https://turadioeninternet.com.ar/";
 
 const Index = () => {
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Tu Radio en Internet",
-      url: "https://turadioeninternet.com.ar/",
-      description:
-        "Servicio profesional de streaming de radio online y diseño web profesional para emisoras en Argentina.",
-      areaServed: "AR",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "AR",
-        addressRegion: "Entre Ríos",
-        addressLocality: "Concordia",
-      },
-      sameAs: ["https://www.instagram.com/turadioeninternet/"],
-      contactPoint: {
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE}#organization`,
+    name: "Tu Radio en Internet",
+    alternateName: "TuRadioEnInternet",
+    url: SITE,
+    logo: {
+      "@type": "ImageObject",
+      url: `https://turadioeninternet.com.ar${logoAsset.url}`,
+      caption: "Tu Radio en Internet",
+    },
+    image: `https://turadioeninternet.com.ar${logoAsset.url}`,
+    email: "contacto@turadioeninternet.com.ar",
+    telephone: "+54-9-345-403-9523",
+    description:
+      "Servicio profesional de streaming de radio online, servidores Icecast y SHOUTcast y diseño web profesional para emisoras en Argentina.",
+    slogan: "Creá tu radio por internet con streaming de audio HD",
+    areaServed: { "@type": "Country", name: "Argentina" },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "AR",
+      addressRegion: "Entre Ríos",
+      addressLocality: "Concordia",
+    },
+    sameAs: ["https://www.instagram.com/turadioeninternet/"],
+    contactPoint: [
+      {
         "@type": "ContactPoint",
         contactType: "customer support",
         availableLanguage: ["Spanish"],
         telephone: "+54-9-345-403-9523",
+        email: "contacto@turadioeninternet.com.ar",
+        areaServed: "AR",
       },
-    },
-    {
-      "@context": "https://schema.org",
+    ],
+    knowsAbout: [
+      "Streaming de radio online",
+      "Servidores Icecast",
+      "Servidores SHOUTcast",
+      "Radio por internet",
+      "Diseño web para radios",
+    ],
+  };
+
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE}#website`,
+    url: SITE,
+    name: "Tu Radio en Internet",
+    inLanguage: "es-AR",
+    publisher: { "@id": `${SITE}#organization` },
+  };
+
+  const offers = plans.map((p) => ({
+    "@type": "Offer",
+    name: p.name,
+    description: p.tagline,
+    price: p.price.replace(/\./g, ""),
+    priceCurrency: "ARS",
+    availability: "https://schema.org/InStock",
+    url: `${SITE}#planes`,
+    itemOffered: {
       "@type": "Service",
-      serviceType: "Streaming de radio online y diseño web para radios",
-      provider: {
-        "@type": "Organization",
-        name: "Tu Radio en Internet",
-        url: "https://turadioeninternet.com.ar/",
-      },
-      areaServed: { "@type": "Country", name: "Argentina" },
-      description:
-        "Servidores de streaming Icecast y SHOUTcast en HD, AutoDJ, estadísticas en vivo y desarrollo web profesional para radios online.",
+      name: `${p.name} - Streaming de radio online`,
+      description: p.features.join(". "),
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: p.price.replace(/\./g, ""),
+      priceCurrency: "ARS",
+      billingIncrement: 1,
+      unitCode: "MON",
+      referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" },
     },
-  ];
+  }));
+
+  const streamingService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE}#servicio-streaming`,
+    name: "Streaming de radio online en HD",
+    serviceType: "Streaming de audio para radios online",
+    category: "Streaming de radio",
+    provider: { "@id": `${SITE}#organization` },
+    areaServed: { "@type": "Country", name: "Argentina" },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${SITE}#planes`,
+      availableLanguage: "es-AR",
+    },
+    description:
+      "Servidores de streaming Icecast v2 y SHOUTcast v2 con transferencia ilimitada, panel Sonic Panel, calidad MP3 128 kbps o AAC+, estadísticas en vivo y soporte humano 24/7 para tu radio por internet.",
+    offers,
+  };
+
+  const webService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE}#servicio-web`,
+    name: "Diseño web profesional para radios online",
+    serviceType: "Desarrollo y diseño web para emisoras de radio",
+    category: "Diseño web",
+    provider: { "@id": `${SITE}#organization` },
+    areaServed: { "@type": "Country", name: "Argentina" },
+    description:
+      "Páginas web para radios con reproductor integrado, enlaces a redes sociales, botón de WhatsApp y portales auto administrables formato Magazine, optimizados para SEO y mobile-first.",
+  };
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${SITE}#faq`,
+    inLanguage: "es-AR",
+    isPartOf: { "@id": `${SITE}#website` },
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const jsonLd = [organization, website, streamingService, webService, faqPage];
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
