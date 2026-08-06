@@ -1,5 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 const cols = [
   {
@@ -34,7 +34,7 @@ export const Footer = () => {
         <div className="lg:col-span-2 space-y-5">
           <div className="flex items-center gap-2 font-display font-bold text-lg">
             <img
-              src={logoAsset.url}
+              src={logoUrl}
               alt="Logo Tu Radio en Internet"
               className="h-11 w-11 rounded-full shadow-glow"
               width={44}

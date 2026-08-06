@@ -6,7 +6,7 @@ import { FAQ, faqs } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { StickyPlayer } from "@/components/StickyPlayer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import logoAsset from "@/assets/logo.png.asset.json";
+
 
 const SITE = "https://turadioeninternet.com.ar/";
 

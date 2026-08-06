@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoUrl from "@/assets/logo.png";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
@@ -30,7 +30,7 @@ export const Navbar = () => {
       <nav className="container flex h-16 items-center justify-between" aria-label="Principal">
         <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Logo Tu Radio en Internet - streaming de radio online"
             className="h-10 w-10 rounded-full shadow-glow"
             width={40}
