@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Radio, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
@@ -28,9 +29,13 @@ export const Navbar = () => {
     >
       <nav className="container flex h-16 items-center justify-between" aria-label="Principal">
         <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
-            <Radio className="h-5 w-5 text-primary-foreground" />
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Logo Tu Radio en Internet - streaming de radio online"
+            className="h-10 w-10 rounded-full shadow-glow"
+            width={40}
+            height={40}
+          />
           <span>Tu Radio en Internet<span className="text-primary">.</span></span>
         </a>
 

@@ -1,4 +1,5 @@
-import { Radio, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 const cols = [
   {
@@ -32,9 +33,14 @@ export const Footer = () => {
       <div className="container grid gap-12 lg:grid-cols-5">
         <div className="lg:col-span-2 space-y-5">
           <div className="flex items-center gap-2 font-display font-bold text-lg">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
-              <Radio className="h-5 w-5 text-primary-foreground" />
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="Logo Tu Radio en Internet"
+              className="h-11 w-11 rounded-full shadow-glow"
+              width={44}
+              height={44}
+              loading="lazy"
+            />
             <span>Tu Radio en Internet<span className="text-primary">.</span></span>
           </div>
           <p className="text-muted-foreground max-w-sm leading-relaxed">
