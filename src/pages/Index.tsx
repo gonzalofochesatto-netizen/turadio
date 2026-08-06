@@ -20,10 +20,10 @@ const Index = () => {
     url: SITE,
     logo: {
       "@type": "ImageObject",
-      url: `https://turadioeninternet.com.ar${logoAsset.url}`,
+      url: `${SITE}logo.png`,
       caption: "Tu Radio en Internet",
     },
-    image: `https://turadioeninternet.com.ar${logoAsset.url}`,
+    image: `${SITE}logo.png`,
     email: "contacto@turadioeninternet.com.ar",
     telephone: "+54-9-345-403-9523",
     description:
