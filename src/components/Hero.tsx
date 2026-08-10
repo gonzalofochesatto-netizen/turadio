@@ -28,18 +28,19 @@ export const Hero = () => {
             <span className="text-gradient">Diseño Web Profesional</span>
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Transmití tu radio por internet con servidores Icecast y SHOUTcast en HD,
-            páginas web a medida para emisoras y soporte humano 24/7. La forma más simple
-            y profesional de hacer una radio online en Argentina.
+          <p className="text-lg text-muted-foreground max_w-xl max-w-xl leading-relaxed">
+            Contratá tu streaming de radio en HD desde <strong className="text-foreground">$5.000 por mes</strong>:
+            servidores Icecast y SHOUTcast, páginas web a medida para emisoras y soporte humano 24/7.
+            La forma más simple y profesional de hacer una radio online en Argentina.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
             <Button variant="hero" size="xl" asChild>
               <a href="#planes">
-                Empezar ahora <ArrowRight className="h-4 w-4" />
+                Ver precios y contratar <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
+
             <Button
               variant="glow"
               size="xl"
