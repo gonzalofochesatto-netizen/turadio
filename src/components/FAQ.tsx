@@ -8,6 +8,18 @@ import {
 
 export const faqs = [
   {
+    q: "¿Cuánto cuesta contratar un streaming para radio online?",
+    a: "Contratar streaming para radio online con nosotros cuesta desde $5.000 por mes (100 oyentes en HD). El Plan Intermedio de $10.000 suma 500 oyentes y una web simple con reproductor, y el Plan Avanzado de $20.000 llega a 9999 oyentes con portal auto administrable formato Magazine. Todos los precios son en pesos argentinos, por mes y sin contratos forzosos.",
+  },
+  {
+    q: "¿Cómo contrato el servicio de streaming?",
+    a: "Elegí el plan que necesitás y tocá el botón «Contratar»: se abre un chat de WhatsApp con nuestro equipo. Ahí coordinamos los datos de tu radio y el pago, y te entregamos el servidor de streaming configurado y listo para transmitir, normalmente el mismo día.",
+  },
+  {
+    q: "¿Puedo cambiar o cancelar mi plan cuando quiera?",
+    a: "Sí. Trabajamos con planes mensuales sin contratos forzosos: podés subir o bajar de plan cuando tu audiencia lo requiera, o dar de baja el servicio avisándonos por WhatsApp.",
+  },
+  {
     q: "¿Cómo crear una radio online?",
     a: "Para crear una radio online necesitás tres cosas: un servicio de streaming de audio (servidor Icecast o SHOUTcast), un software de transmisión como BUTT, RadioBOSS o Mixxx, y una página web donde tus oyentes puedan escucharte. En Tu Radio en Internet te entregamos todo configurado y listo para salir al aire en pocas horas.",
   },
@@ -15,6 +27,7 @@ export const faqs = [
     q: "¿Cuánto cuesta el streaming de radio en Argentina?",
     a: "Nuestros planes de streaming de radio en Argentina arrancan desde $5.000 mensuales para 100 oyentes en HD, con transferencia ilimitada y servidores Icecast v2 y SHOUTcast v2. Tenemos planes intermedios y avanzados que incluyen también diseño web profesional para tu emisora.",
   },
+
   {
     q: "¿Qué necesito para transmitir radio por internet?",
     a: "Necesitás una computadora con conexión estable, un micrófono, un software de transmisión (BUTT, RadioBOSS, Mixxx o similar) y un servidor de streaming profesional como el que ofrecemos. Nosotros te asesoramos en la configuración inicial y te damos soporte humano 24/7.",
