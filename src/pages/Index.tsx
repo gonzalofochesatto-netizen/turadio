@@ -8,7 +8,7 @@ import { StickyPlayer } from "@/components/StickyPlayer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 
-const SITE = "https://turadioeninternet.com.ar/";
+const SITE = "https://www.turadioeninternet.com.ar/";
 
 const Index = () => {
   const organization = {
@@ -74,6 +74,7 @@ const Index = () => {
     priceCurrency: "ARS",
     availability: "https://schema.org/InStock",
     url: `${SITE}#planes`,
+    category: "Contratar streaming para radio online",
     itemOffered: {
       "@type": "Service",
       name: `${p.name} - Streaming de radio online`,
@@ -89,6 +90,8 @@ const Index = () => {
     },
   }));
 
+  const prices = plans.map((p) => Number(p.price.replace(/\./g, "")));
+
   const streamingService = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -103,10 +106,26 @@ const Index = () => {
       serviceUrl: `${SITE}#planes`,
       availableLanguage: "es-AR",
     },
+    termsOfService: "Sin contratos forzosos. Podés cambiar de plan cuando quieras.",
     description:
-      "Servidores de streaming Icecast v2 y SHOUTcast v2 con transferencia ilimitada, panel Sonic Panel, calidad MP3 128 kbps o AAC+, estadísticas en vivo y soporte humano 24/7 para tu radio por internet.",
-    offers,
+      "Contratá streaming de radio online en Argentina: servidores Icecast v2 y SHOUTcast v2 con transferencia ilimitada, panel Sonic Panel, calidad MP3 128 kbps o AAC+, estadísticas en vivo y soporte humano 24/7. Planes mensuales desde $5.000.",
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ARS",
+      lowPrice: Math.min(...prices),
+      highPrice: Math.max(...prices),
+      offerCount: offers.length,
+      availability: "https://schema.org/InStock",
+      url: `${SITE}#planes`,
+      offers,
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Planes de streaming para radios online",
+      itemListElement: offers,
+    },
   };
+
 
   const webService = {
     "@context": "https://schema.org",
