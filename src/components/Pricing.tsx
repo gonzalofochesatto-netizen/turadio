@@ -63,12 +63,14 @@ export const Pricing = () => {
             Planes y precios
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-3 leading-tight">
-            Elegí el plan que <span className="text-gradient">potencia tu radio</span>
+            Contratá tu <span className="text-gradient">streaming para radio online</span> desde $5.000 por mes
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            Precios en pesos argentinos. Sin contratos forzosos, cambiá de plan cuando quieras.
+            Precios en pesos argentinos, por mes y sin contratos forzosos. Alta del servidor
+            el mismo día y cambio de plan cuando quieras.
           </p>
         </div>
+
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((p, i) => (
