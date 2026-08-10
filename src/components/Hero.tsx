@@ -28,7 +28,7 @@ export const Hero = () => {
             <span className="text-gradient">Diseño Web Profesional</span>
           </h1>
 
-          <p className="text-lg text-muted-foreground max_w-xl max-w-xl leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             Contratá tu streaming de radio en HD desde <strong className="text-foreground">$5.000 por mes</strong>:
             servidores Icecast y SHOUTcast, páginas web a medida para emisoras y soporte humano 24/7.
             La forma más simple y profesional de hacer una radio online en Argentina.
