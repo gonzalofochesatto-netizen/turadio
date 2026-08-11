@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { ServicesBento } from "@/components/ServicesBento";
 import { Pricing, plans } from "@/components/Pricing";
 import { FAQ, faqs } from "@/components/FAQ";
-import { WebDesign } from "@/components/WebDesign";
+import { WebDesign, webFaqs } from "@/components/WebDesign";
 import { ProjectCta } from "@/components/ProjectCta";
 import { Footer } from "@/components/Footer";
 import { StickyPlayer } from "@/components/StickyPlayer";
