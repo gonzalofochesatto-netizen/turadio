@@ -1,6 +1,31 @@
 import { motion } from "framer-motion";
 import { Briefcase, Store, Rocket, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export const webFaqs = [
+  {
+    q: "¿Cuánto cuesta hacer una página web para un negocio?",
+    a: "El precio depende del alcance: una web institucional de una página con secciones de servicios, contacto y WhatsApp es más económica que un sitio con catálogo, blog o panel auto administrable. Contanos qué necesitás por WhatsApp y te enviamos un presupuesto cerrado, sin costos ocultos y con los tiempos de entrega por escrito.",
+  },
+  {
+    q: "¿Cuánto tarda el desarrollo de un sitio web?",
+    a: "Una web de presentación para un profesional o comercio suele estar publicada en pocos días desde que recibimos textos, logo e imágenes. Los proyectos con catálogo, secciones administrables o integraciones requieren más tiempo, y te lo confirmamos antes de empezar.",
+  },
+  {
+    q: "¿La página web se ve bien en el celular y aparece en Google?",
+    a: "Sí. Desarrollamos con enfoque mobile-first, carga rápida y estructura optimizada para SEO: títulos y encabezados semánticos, metadatos, textos orientados a tus servicios y datos estructurados para que Google entienda a qué se dedica tu negocio.",
+  },
+  {
+    q: "¿Qué necesito para empezar mi página web?",
+    a: "Con tu logo (si lo tenés), una descripción de tus servicios, fotos y los datos de contacto podemos arrancar. Si todavía no tenés dominio ni textos definidos, te asesoramos para elegirlos y redactamos el contenido comercial junto a vos.",
+  },
+];
 
 const WA_NUMBER = "5493454039523";
 const WA_MESSAGE =
