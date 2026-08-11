@@ -148,7 +148,7 @@ const Index = () => {
     "@id": `${SITE}#faq`,
     inLanguage: "es-AR",
     isPartOf: { "@id": `${SITE}#website` },
-    mainEntity: faqs.map((f) => ({
+    mainEntity: [...faqs, ...webFaqs].map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
