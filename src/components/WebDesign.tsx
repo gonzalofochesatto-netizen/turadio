@@ -65,10 +65,12 @@ export const WebDesign = () => {
             ¿Necesitás una <span className="text-gradient">página web para tu negocio</span>?
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            También desarrollamos sitios web profesionales para profesionales, comercios y
-            emprendedores que quieren tener una presencia sólida y profesional en Internet.
+            También diseñamos y desarrollamos páginas web profesionales para profesionales,
+            comercios y emprendedores de Concordia, Entre Ríos y toda Argentina: sitios rápidos,
+            mobile-first, optimizados para Google y con WhatsApp integrado para recibir consultas.
           </p>
         </div>
+
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {items.map((it, i) => (
