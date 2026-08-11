@@ -112,7 +112,40 @@ export const WebDesign = () => {
             </a>
           </Button>
         </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 max-w-3xl mx-auto"
+        >
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-center">
+            Preguntas frecuentes sobre <span className="text-gradient">desarrollo web</span>
+          </h3>
+          <p className="text-muted-foreground mt-3 text-center">
+            Precios, plazos y qué necesitás para publicar la web de tu negocio.
+          </p>
+          <Accordion type="single" collapsible className="w-full space-y-3 mt-8">
+            {webFaqs.map((f, i) => (
+              <AccordionItem
+                key={f.q}
+                value={`web-faq-${i}`}
+                className="rounded-2xl border border-border bg-card/50 px-5 data-[state=open]:border-primary/40 data-[state=open]:shadow-card"
+              >
+                <AccordionTrigger className="font-display text-left text-base md:text-lg font-semibold hover:no-underline">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
+
 };
