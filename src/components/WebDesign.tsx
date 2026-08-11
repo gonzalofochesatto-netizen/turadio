@@ -1,6 +1,31 @@
 import { motion } from "framer-motion";
 import { Briefcase, Store, Rocket, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export const webFaqs = [
+  {
+    q: "¿Cuánto cuesta hacer una página web para un negocio?",
+    a: "El precio depende del alcance: una web institucional de una página con secciones de servicios, contacto y WhatsApp es más económica que un sitio con catálogo, blog o panel auto administrable. Contanos qué necesitás por WhatsApp y te enviamos un presupuesto cerrado, sin costos ocultos y con los tiempos de entrega por escrito.",
+  },
+  {
+    q: "¿Cuánto tarda el desarrollo de un sitio web?",
+    a: "Una web de presentación para un profesional o comercio suele estar publicada en pocos días desde que recibimos textos, logo e imágenes. Los proyectos con catálogo, secciones administrables o integraciones requieren más tiempo, y te lo confirmamos antes de empezar.",
+  },
+  {
+    q: "¿La página web se ve bien en el celular y aparece en Google?",
+    a: "Sí. Desarrollamos con enfoque mobile-first, carga rápida y estructura optimizada para SEO: títulos y encabezados semánticos, metadatos, textos orientados a tus servicios y datos estructurados para que Google entienda a qué se dedica tu negocio.",
+  },
+  {
+    q: "¿Qué necesito para empezar mi página web?",
+    a: "Con tu logo (si lo tenés), una descripción de tus servicios, fotos y los datos de contacto podemos arrancar. Si todavía no tenés dominio ni textos definidos, te asesoramos para elegirlos y redactamos el contenido comercial junto a vos.",
+  },
+];
 
 const WA_NUMBER = "5493454039523";
 const WA_MESSAGE =
@@ -40,10 +65,12 @@ export const WebDesign = () => {
             ¿Necesitás una <span className="text-gradient">página web para tu negocio</span>?
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            También desarrollamos sitios web profesionales para profesionales, comercios y
-            emprendedores que quieren tener una presencia sólida y profesional en Internet.
+            También diseñamos y desarrollamos páginas web profesionales para profesionales,
+            comercios y emprendedores de Concordia, Entre Ríos y toda Argentina: sitios rápidos,
+            mobile-first, optimizados para Google y con WhatsApp integrado para recibir consultas.
           </p>
         </div>
+
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {items.map((it, i) => (
@@ -85,7 +112,39 @@ export const WebDesign = () => {
             </a>
           </Button>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 max-w-3xl mx-auto"
+        >
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-center">
+            Preguntas frecuentes sobre <span className="text-gradient">desarrollo web</span>
+          </h3>
+          <p className="text-muted-foreground mt-3 text-center">
+            Precios, plazos y qué necesitás para publicar la web de tu negocio.
+          </p>
+          <Accordion type="single" collapsible className="w-full space-y-3 mt-8">
+            {webFaqs.map((f, i) => (
+              <AccordionItem
+                key={f.q}
+                value={`web-faq-${i}`}
+                className="rounded-2xl border border-border bg-card/50 px-5 data-[state=open]:border-primary/40 data-[state=open]:shadow-card"
+              >
+                <AccordionTrigger className="font-display text-left text-base md:text-lg font-semibold hover:no-underline">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
+
 };
