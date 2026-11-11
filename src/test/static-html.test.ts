@@ -3,8 +3,31 @@ import { describe, it, expect } from "vitest";
 import { createServer } from "vite";
 import path from "node:path";
 import { JSDOM } from "jsdom";
+import { prerenderHome } from "../../prerender";
+import type { OutputBundle, NormalizedOutputOptions, PluginContext } from "rollup";
+import { readFile, writeFile } from "node:fs/promises";
 
 describe("homepage initial HTML", () => {
+  it("inserts the HTML into the publication output and resolves bundled images", async () => {
+    const html = await readFile("index.html", "utf8");
+    const bundle: OutputBundle = {
+      "index.html": { type: "asset", fileName: "index.html", name: "index.html", names: ["index.html"], originalFileName: "index.html", originalFileNames: ["index.html"], needsCodeReference: false, source: html },
+    };
+    for (const name of ["logo.png", "hero-woman-listening.jpg"]) {
+      bundle[`assets/${name}`] = { type: "asset", fileName: `assets/${name}`, name, names: [name], originalFileName: `src/assets/${name}`, originalFileNames: [`src/assets/${name}`], needsCodeReference: false, source: "" };
+    }
+    const hook = prerenderHome().generateBundle;
+    const handler = typeof hook === "function" ? hook : hook?.handler;
+    if (!handler) throw new Error("Missing prerender hook");
+    await handler.call({} as PluginContext, {} as NormalizedOutputOptions, bundle, false);
+    const output = bundle["index.html"];
+    if (output.type !== "asset") throw new Error("Missing HTML output");
+    const doc: Document = new JSDOM(String(output.source)).window.document;
+    expect(doc.querySelector("#root h1")).not.toBeNull();
+    expect(doc.querySelector('#root script[type="application/ld+json"]')).not.toBeNull();
+    expect(Array.from(doc.querySelectorAll("img"), e => e.getAttribute("src"))).toEqual(["/assets/logo.png", "/assets/hero-woman-listening.jpg", "/assets/logo.png"]);
+    if (process.env.PRERENDER_CAPTURE_PATH) await writeFile(process.env.PRERENDER_CAPTURE_PATH, String(output.source));
+  }, 30000);
   it("contains the H1, plans, all FAQ answers and JSON-LD before JavaScript", async () => {
     const server = await createServer({
       configFile: false,
