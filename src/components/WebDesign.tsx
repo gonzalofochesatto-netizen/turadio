@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useStaticHtml } from "@/lib/static-html";
 import { Briefcase, Store, Rocket, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -53,6 +54,7 @@ const items = [
 ];
 
 export const WebDesign = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section id="web" className="relative py-24 md:py-32">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
@@ -76,7 +78,7 @@ export const WebDesign = () => {
           {items.map((it, i) => (
             <motion.article
               key={it.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={staticHtml ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
@@ -92,7 +94,7 @@ export const WebDesign = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={staticHtml ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -114,7 +116,7 @@ export const WebDesign = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={staticHtml ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}

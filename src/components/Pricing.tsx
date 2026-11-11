@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useStaticHtml } from "@/lib/static-html";
 
 export const plans = [
   {
@@ -54,6 +55,7 @@ export const plans = [
 ];
 
 export const Pricing = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section id="planes" className="relative py-24 md:py-32">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
@@ -76,7 +78,7 @@ export const Pricing = () => {
           {plans.map((p, i) => (
             <motion.div
               key={p.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={staticHtml ? false : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}

@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
+import { useStaticHtml } from "@/lib/static-html";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { webDesignWhatsApp } from "@/components/WebDesign";
 
 export const ProjectCta = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section className="relative pb-24 pt-4 md:pb-32">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={staticHtml ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}

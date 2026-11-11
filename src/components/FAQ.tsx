@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useStaticHtml } from "@/lib/static-html";
 import {
   Accordion,
   AccordionContent,
@@ -47,6 +48,7 @@ export const faqs = [
 ];
 
 export const FAQ = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section id="faq" className="relative py-24 md:py-32">
       <div className="container max-w-4xl">
@@ -63,7 +65,7 @@ export const FAQ = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={staticHtml ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}

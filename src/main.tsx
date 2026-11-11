@@ -1,5 +1,13 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { StaticHtmlContext } from "./lib/static-html";
 import App from "./App.tsx";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+const root = document.getElementById("root");
+if (root) {
+  if (root.hasChildNodes()) {
+    hydrateRoot(root, <StaticHtmlContext.Provider value={true}><App /></StaticHtmlContext.Provider>);
+  } else {
+    createRoot(root).render(<App />);
+  }
+}

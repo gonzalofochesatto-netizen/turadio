@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroMockup from "@/assets/hero-woman-listening.jpg";
+import { useStaticHtml } from "@/lib/static-html";
 
 export const Hero = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
       {/* Background layers */}
@@ -13,7 +15,7 @@ export const Hero = () => {
 
       <div className="container relative grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={staticHtml ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="space-y-7"
@@ -72,7 +74,7 @@ export const Hero = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
+          initial={staticHtml ? false : { opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
           className="relative flex items-center justify-center"
