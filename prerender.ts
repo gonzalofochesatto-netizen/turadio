@@ -14,6 +14,7 @@ export function prerenderHome(): Plugin {
         configFile: false,
         server: { middlewareMode: true },
         appType: "custom",
+        esbuild: { jsx: "automatic" },
         resolve: { alias: { "@": path.resolve("src") } },
       });
       try {

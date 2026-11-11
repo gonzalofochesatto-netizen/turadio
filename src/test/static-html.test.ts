@@ -1,6 +1,8 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { createServer } from "vite";
 import path from "node:path";
+import { JSDOM } from "jsdom";
 
 describe("homepage initial HTML", () => {
   it("contains the H1, plans, all FAQ answers and JSON-LD before JavaScript", async () => {
@@ -8,12 +10,13 @@ describe("homepage initial HTML", () => {
       configFile: false,
       server: { middlewareMode: true },
       appType: "custom",
+      esbuild: { jsx: "automatic" },
       resolve: { alias: { "@": path.resolve("src") } },
     });
     try {
       const { render } = await server.ssrLoadModule("/src/entry-static.tsx");
       const html: string = render();
-      const doc = new DOMParser().parseFromString(html, "text/html");
+      const doc = new JSDOM(html).window.document;
       expect(doc.querySelectorAll("h1")).toHaveLength(1);
       expect(doc.querySelector("h1")?.textContent).toContain("Crear tu Radio Online");
       const prices = Array.from(doc.querySelectorAll("#planes .text-5xl"), e => e.textContent);
