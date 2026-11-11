@@ -16,7 +16,7 @@ describe("homepage initial HTML", () => {
     try {
       const { render } = await server.ssrLoadModule("/src/entry-static.tsx");
       const html: string = render();
-      const doc = new JSDOM(html).window.document;
+      const doc: Document = new JSDOM(html).window.document;
       expect(doc.querySelectorAll("h1")).toHaveLength(1);
       expect(doc.querySelector("h1")?.textContent).toContain("Crear tu Radio Online");
       const prices = Array.from(doc.querySelectorAll("#planes .text-5xl"), e => e.textContent);
