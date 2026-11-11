@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, Radio } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const StickyPlayer = () => {
   const [playing, setPlaying] = useState(false);
@@ -33,16 +34,18 @@ export const StickyPlayer = () => {
   return (
     <div
       id="demo"
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(92vw,520px)]"
+      className="fixed bottom-[max(0.5rem,env(safe-area-inset-bottom))] left-3 right-[4.5rem] z-40 sm:bottom-4 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-[min(92vw,520px)]"
     >
-      <div className="glass border border-border/60 rounded-2xl shadow-elegant p-3 flex items-center gap-3">
-        <button
+      <div className="glass border border-border/60 rounded-2xl shadow-elegant p-2 sm:p-3 flex items-center gap-2 sm:gap-3">
+        <Button
+          variant="hero"
+          size="icon"
           onClick={toggle}
           aria-label={playing ? "Pausar demo" : "Reproducir demo"}
-          className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105 transition-transform"
+          className="relative flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105 transition-transform"
         >
           {playing ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
-        </button>
+        </Button>
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">

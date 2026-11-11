@@ -10,10 +10,10 @@ export const WhatsAppFab = () => {
       target="_blank"
       rel="noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-24 right-5 z-50 group"
+      className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3 sm:bottom-24 sm:right-5 z-50 group"
     >
       <span className="absolute inset-0 rounded-full bg-[#25D366] blur-xl opacity-50 group-hover:opacity-80 transition-opacity" />
-      <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-elegant animate-pulse-glow group-hover:scale-110 transition-transform">
+      <span className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-elegant animate-pulse-glow group-hover:scale-110 transition-transform">
         <MessageCircle className="h-6 w-6" fill="currentColor" />
       </span>
     </a>

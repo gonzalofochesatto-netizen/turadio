@@ -80,6 +80,27 @@ All colors MUST be HSL.
   }
 }
 
+/* Reserve a separate viewport strip for the fixed controls, even mid-scroll. */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: calc(100svh - 90px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 639px) {
+  #root {
+    height: calc(100svh - 74px - env(safe-area-inset-bottom));
+    scrollbar-gutter: auto;
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
