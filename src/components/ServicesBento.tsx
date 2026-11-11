@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useStaticHtml } from "@/lib/static-html";
 import { Radio, Globe, Music2, Headphones, BarChart3 } from "lucide-react";
 
 const services = [
@@ -36,6 +37,7 @@ const services = [
 ];
 
 export const ServicesBento = () => {
+  const staticHtml = useStaticHtml();
   return (
     <section id="servicios" className="relative py-24 md:py-32">
       <div className="container">
@@ -57,7 +59,7 @@ export const ServicesBento = () => {
           {services.map((s, i) => (
             <motion.article
               key={s.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={staticHtml ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
