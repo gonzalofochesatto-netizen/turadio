@@ -8,7 +8,6 @@ import { ProjectCta } from "@/components/ProjectCta";
 import { Footer } from "@/components/Footer";
 import { StickyPlayer } from "@/components/StickyPlayer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import { ConsentBanner } from "@/components/ConsentBanner";
 
 
 const SITE = "https://www.turadioeninternet.com.ar/";
@@ -173,7 +172,6 @@ const Index = () => {
       <Footer />
       <StickyPlayer />
       <WhatsAppFab />
-      <ConsentBanner />
 
       {/* SEO: structured data */}
       <script
