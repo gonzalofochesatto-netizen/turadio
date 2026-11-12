@@ -1,3 +1,4 @@
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 import { useStaticHtml } from "@/lib/static-html";
 import { Briefcase, Store, Rocket, MessageCircle } from "lucide-react";
@@ -108,7 +109,7 @@ export const WebDesign = () => {
             propuesta acorde a tus objetivos.
           </p>
           <Button variant="hero" size="lg" className="mt-8 w-full sm:w-auto" asChild>
-            <a href={webDesignWhatsApp} target="_blank" rel="noreferrer">
+            <a href={webDesignWhatsApp} target="_blank" rel="noreferrer" onClick={() => trackWhatsAppClick("diseno_web")}>
               <MessageCircle className="h-5 w-5" />
               CONSULTAR POR WHATSAPP
             </a>

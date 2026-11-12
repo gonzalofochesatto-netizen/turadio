@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export const WhatsAppFab = () => {
   const href = `https://wa.me/5493454039523?text=${encodeURIComponent(
@@ -9,6 +10,7 @@ export const WhatsAppFab = () => {
       href={href}
       target="_blank"
       rel="noreferrer"
+      onClick={() => trackWhatsAppClick("boton_flotante")}
       aria-label="Contactar por WhatsApp"
       className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3 sm:bottom-6 sm:right-5 z-50 group"
     >

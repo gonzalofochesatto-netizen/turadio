@@ -1,3 +1,4 @@
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 import { useStaticHtml } from "@/lib/static-html";
 import { MessageCircle } from "lucide-react";
@@ -25,7 +26,7 @@ export const ProjectCta = () => {
               Contanos tu idea y conversemos sobre cómo llevarla a Internet.
             </p>
             <Button variant="hero" size="lg" className="mt-8 w-full sm:w-auto" asChild>
-              <a href={webDesignWhatsApp} target="_blank" rel="noreferrer">
+              <a href={webDesignWhatsApp} target="_blank" rel="noreferrer" onClick={() => trackWhatsAppClick("proyecto")}>
                 <MessageCircle className="h-5 w-5" />
                 CONSULTAR POR WHATSAPP
               </a>

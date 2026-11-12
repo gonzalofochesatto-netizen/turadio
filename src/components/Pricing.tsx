@@ -1,3 +1,4 @@
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -128,6 +129,7 @@ export const Pricing = () => {
                   )}`}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackWhatsAppClick("planes")}
                 >
                   Contratar {p.name}
                 </a>

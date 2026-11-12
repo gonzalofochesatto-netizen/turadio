@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import logoUrl from "@/assets/logo.png";
+import { OPEN_CONSENT_EVENT } from "@/components/ConsentBanner";
 
 const cols = [
   {
@@ -77,7 +78,16 @@ export const Footer = () => {
         <p>© {new Date().getFullYear()} Tu Radio en Internet. Todos los derechos reservados.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-foreground transition-colors">Términos</a>
-          <a href="#" className="hover:text-foreground transition-colors">Privacidad</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new Event(OPEN_CONSENT_EVENT));
+            }}
+            className="hover:text-foreground transition-colors"
+          >
+            Privacidad
+          </a>
         </div>
       </div>
     </footer>
