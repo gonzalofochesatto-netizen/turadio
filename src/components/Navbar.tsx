@@ -5,6 +5,7 @@ import logoUrl from "@/assets/logo.png";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
+  { href: "#trabajos", label: "Trabajos" },
   { href: "#planes", label: "Planes" },
   { href: "#faq", label: "FAQ" },
   { href: "#contacto", label: "Contacto" },
@@ -40,7 +41,7 @@ export const Navbar = () => {
           <span>Tu Radio en Internet<span className="text-primary">.</span></span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <ul className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="hover:text-foreground transition-colors">
@@ -50,14 +51,14 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Button variant="hero" size="sm" asChild>
             <a href="#planes">Empezar ahora</a>
           </Button>
         </div>
 
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
@@ -66,7 +67,7 @@ export const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden glass border-t border-border/50">
+        <div className="lg:hidden glass border-t border-border/50">
           <ul className="container py-4 flex flex-col gap-4 text-sm">
             {links.map((l) => (
               <li key={l.href}>

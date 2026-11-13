@@ -13,8 +13,10 @@ describe("homepage initial HTML", () => {
     const bundle: OutputBundle = {
       "index.html": { type: "asset", fileName: "index.html", name: "index.html", names: ["index.html"], originalFileName: "index.html", originalFileNames: ["index.html"], needsCodeReference: false, source: html },
     };
-    for (const name of ["logo.png", "hero-woman-listening.jpg"]) {
-      bundle[`assets/${name}`] = { type: "asset", fileName: `assets/${name}`, name, names: [name], originalFileName: `src/assets/${name}`, originalFileNames: [`src/assets/${name}`], needsCodeReference: false, source: "" };
+    const portfolio = Array.from({ length: 8 }, (_, i) => `portfolio/site${i + 1}.jpg`);
+    for (const name of ["logo.png", "hero-woman-listening.jpg", ...portfolio]) {
+      const base = name.split("/").pop()!;
+      bundle[`assets/${base}`] = { type: "asset", fileName: `assets/${base}`, name: base, names: [base], originalFileName: `src/assets/${name}`, originalFileNames: [`src/assets/${name}`], needsCodeReference: false, source: "" };
     }
     const hook = prerenderHome().generateBundle;
     const handler = typeof hook === "function" ? hook : hook?.handler;
@@ -25,7 +27,7 @@ describe("homepage initial HTML", () => {
     const doc: Document = new JSDOM(String(output.source)).window.document;
     expect(doc.querySelector("#root h1")).not.toBeNull();
     expect(doc.querySelector('#root script[type="application/ld+json"]')).not.toBeNull();
-    expect(Array.from(doc.querySelectorAll("img"), e => e.getAttribute("src"))).toEqual(["/assets/logo.png", "/assets/hero-woman-listening.jpg", "/assets/logo.png"]);
+    expect(Array.from(doc.querySelectorAll("img"), e => e.getAttribute("src"))).toEqual(["/assets/logo.png", "/assets/hero-woman-listening.jpg", ...portfolio.map(n => `/assets/${n.split("/").pop()}`), "/assets/logo.png"]);
     if (process.env.PRERENDER_CAPTURE_PATH) await writeFile(process.env.PRERENDER_CAPTURE_PATH, String(output.source));
   }, 30000);
   it("contains the H1, plans, all FAQ answers and JSON-LD before JavaScript", async () => {
