@@ -8,7 +8,7 @@ import { webDesignWhatsApp } from "@/components/WebDesign";
 export const ProjectCta = () => {
   const staticHtml = useStaticHtml();
   return (
-    <section className="relative pb-24 pt-4 md:pb-32">
+    <section className="relative pb-10 pt-4 md:pb-12">
       <div className="container">
         <motion.div
           initial={staticHtml ? false : { opacity: 0, y: 24 }}

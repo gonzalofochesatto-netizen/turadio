@@ -39,7 +39,7 @@ const services = [
 export const ServicesBento = () => {
   const staticHtml = useStaticHtml();
   return (
-    <section id="servicios" className="relative py-24 md:py-32">
+    <section id="servicios" className="relative py-10 md:py-12">
       <div className="container">
         <div className="max-w-2xl mb-14">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">

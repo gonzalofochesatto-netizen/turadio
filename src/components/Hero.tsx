@@ -7,7 +7,7 @@ import { useStaticHtml } from "@/lib/static-html";
 export const Hero = () => {
   const staticHtml = useStaticHtml();
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+    <section className="relative overflow-hidden pt-32 pb-10 md:pt-40 md:pb-12">
       {/* Background layers */}
       <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />

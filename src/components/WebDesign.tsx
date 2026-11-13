@@ -57,7 +57,7 @@ const items = [
 export const WebDesign = () => {
   const staticHtml = useStaticHtml();
   return (
-    <section id="web" className="relative py-24 md:py-32">
+    <section id="web" className="relative py-10 md:py-12">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-16">

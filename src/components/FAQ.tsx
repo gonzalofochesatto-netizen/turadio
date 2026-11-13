@@ -50,7 +50,7 @@ export const faqs = [
 export const FAQ = () => {
   const staticHtml = useStaticHtml();
   return (
-    <section id="faq" className="relative py-24 md:py-32">
+    <section id="faq" className="relative py-10 md:py-12">
       <div className="container max-w-4xl">
         <div className="text-center mb-14">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">

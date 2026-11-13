@@ -20,7 +20,7 @@ export const Portfolio = () => {
   const filtered = projects.filter((p) => filter === "Todos" || p.tags.includes(filter));
   const current = selected === null ? null : projects[selected];
   return (
-    <section id="trabajos" className="py-20 md:py-28 scroll-mt-20" aria-labelledby="trabajos-title">
+    <section id="trabajos" className="py-10 md:py-12 scroll-mt-20" aria-labelledby="trabajos-title">
       <div className="container">
         <p className="text-primary text-xs font-semibold tracking-[.16em] uppercase">Tu Radio en Internet / Trabajos</p>
         <h2 id="trabajos-title" className="font-display text-3xl md:text-5xl font-bold tracking-tight mt-4">Webs que ya están <span className="text-gradient">al aire.</span></h2>
