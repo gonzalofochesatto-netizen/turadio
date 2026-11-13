@@ -45,7 +45,7 @@ describe("homepage initial HTML", () => {
       expect(doc.querySelectorAll("h1")).toHaveLength(1);
       expect(doc.querySelector("h1")?.textContent).toContain("Crear tu Radio Online");
       const prices = Array.from(doc.querySelectorAll("#planes .text-5xl"), e => e.textContent);
-      expect(prices).toEqual(["5.000", "10.000", "20.000"]);
+      expect(prices).toEqual(["5.000", "10.000", "25.000"]);
       const schemas = JSON.parse(doc.querySelector('script[type="application/ld+json"]')?.textContent ?? "null");
       const faq = schemas.find((s: { "@type": string }) => s["@type"] === "FAQPage");
       expect(faq.mainEntity).toHaveLength(13);

@@ -34,11 +34,11 @@ export const plans = [
       "Web con reproductor integrado",
       "Enlaces a redes sociales y botón de WhatsApp",
     ],
-    highlight: true,
+    highlight: false,
   },
   {
     name: "Plan Avanzado",
-    price: "20.000",
+    price: "25.000",
     tagline:
       "Portal auto administrable formato Magazine + Streaming (no incluye dominio)",
     features: [
@@ -51,7 +51,7 @@ export const plans = [
       "Portal de noticias auto administrable",
       "Diseño formato Magazine",
     ],
-    highlight: false,
+    highlight: true,
   },
 ];
 

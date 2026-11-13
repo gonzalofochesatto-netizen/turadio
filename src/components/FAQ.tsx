@@ -10,7 +10,7 @@ import {
 export const faqs = [
   {
     q: "¿Cuánto cuesta contratar un streaming para radio online?",
-    a: "Contratar streaming para radio online con nosotros cuesta desde $5.000 por mes (100 oyentes en HD). El Plan Intermedio de $10.000 suma 500 oyentes y una web simple con reproductor, y el Plan Avanzado de $20.000 llega a 9999 oyentes con portal auto administrable formato Magazine. Todos los precios son en pesos argentinos, por mes y sin contratos forzosos.",
+    a: "Contratar streaming para radio online con nosotros cuesta desde $5.000 por mes (100 oyentes en HD). El Plan Intermedio de $10.000 suma 500 oyentes y una web simple con reproductor, y el Plan Avanzado de $25.000 llega a 9999 oyentes con portal auto administrable formato Magazine. Todos los precios son en pesos argentinos, por mes y sin contratos forzosos.",
   },
   {
     q: "¿Cómo contrato el servicio de streaming?",
