@@ -29,7 +29,7 @@ const cols = [
 
 export const Footer = () => {
   return (
-    <footer id="contacto" className="relative border-t border-border bg-card/30 pt-20 pb-10">
+    <footer id="contacto" className="relative border-t border-border bg-card/30 pt-20 pb-28">
       <div className="container grid gap-12 lg:grid-cols-5">
         <div className="lg:col-span-2 space-y-5">
           <div className="flex items-center gap-2 font-display font-bold text-lg">

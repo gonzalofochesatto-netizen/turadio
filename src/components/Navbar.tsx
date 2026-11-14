@@ -16,11 +16,10 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const scrollRoot = document.getElementById("root");
-    const onScroll = () => setScrolled((scrollRoot?.scrollTop ?? window.scrollY) > 12);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
-    scrollRoot?.addEventListener("scroll", onScroll);
-    return () => scrollRoot?.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
