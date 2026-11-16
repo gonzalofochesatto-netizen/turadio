@@ -1,4 +1,4 @@
-import { Mail, MapPin } from "lucide-react";
+import { Instagram, Mail, MapPin } from "lucide-react";
 import logoUrl from "@/assets/logo.png";
 
 const cols = [
@@ -53,6 +53,17 @@ export const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-primary" /> Concordia - Entre Rios - Argentina
+            </div>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.instagram.com/turadioeninternet.ar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Tu Radio en Internet: @turadioeninternet.ar (se abre en una pestaña nueva)"
+                className="flex items-center gap-2 hover:text-foreground transition-colors"
+              >
+                <Instagram className="h-4 w-4 text-primary" /> Instagram @turadioeninternet.ar
+              </a>
             </div>
           </div>
         </div>

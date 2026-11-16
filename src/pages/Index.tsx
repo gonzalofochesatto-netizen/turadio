@@ -39,7 +39,7 @@ const Index = () => {
       addressRegion: "Entre Ríos",
       addressLocality: "Concordia",
     },
-    sameAs: ["https://www.instagram.com/turadioeninternet/"],
+    sameAs: ["https://www.instagram.com/turadioeninternet.ar/"],
     contactPoint: [
       {
         "@type": "ContactPoint",
